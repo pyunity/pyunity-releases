@@ -1,4 +1,7 @@
-import wget, os, glob
+import wget, os, glob, shutil
+
+if os.path.exists("0.2.1"): shutil.rmtree("0.2.1")
+os.system("md 0.2.1")
 
 for platform, plat_name in zip(
         ["Visual%20Studio%202017", "Ubuntu", "macos"],
