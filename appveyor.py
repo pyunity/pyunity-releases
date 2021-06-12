@@ -1,7 +1,7 @@
 import wget, os, glob, shutil
 
-if os.path.exists("0.6.0"): shutil.rmtree("0.6.0")
-os.mkdir("0.6.0")
+if os.path.exists("0.5.1"): shutil.rmtree("0.5.1")
+os.mkdir("0.5.1")
 
 for platform, plat_name in zip(
         ["Visual%20Studio%202019", "Ubuntu", "macos"],
@@ -12,10 +12,10 @@ for platform, plat_name in zip(
         venv = "../../venv" + version
         windows_location = "C:\\Python" + version[::2] + "-x64\\python"
         job_name = "Image:%20" + platform + ";%20Environment:%20version=" + version + ",%20venv=" + venv + ",%20windows_location=" + windows_location
-        #print("https://ci.appveyor.com/api/projects/rayzchen/pyunity/artifacts/dist/pyunity-0.6.0-" + name + plat_name + ".whl?job=" + job_name)
-        wget.download("https://ci.appveyor.com/api/projects/rayzchen/pyunity/artifacts/dist/pyunity-0.6.0-" + name + plat_name + ".whl?job=" + job_name, "0.6.0/pyunity-0.6.0-" + name + plat_name + ".whl")
+        #print("https://ci.appveyor.com/api/projects/rayzchen/pyunity/artifacts/dist/pyunity-0.5.1-" + name + plat_name + ".whl?job=" + job_name)
+        wget.download("https://ci.appveyor.com/api/projects/rayzchen/pyunity/artifacts/dist/pyunity-0.5.1-" + name + plat_name + ".whl?job=" + job_name, "0.5.1/pyunity-0.5.1-" + name + plat_name + ".whl")
         print()
 
-linux_builds = glob.glob("0.6.0/pyunity-0.6.0*linux*.whl")
+linux_builds = glob.glob("0.5.1/pyunity-0.5.1*linux*.whl")
 for file in linux_builds:
     os.rename(file, file.replace("linux", "manylinux1"))
