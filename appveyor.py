@@ -2,7 +2,7 @@ import urllib
 import wget, os, glob, shutil
 
 if os.path.exists("0.6.0"):
-    for file in glob.glob(os.path.join("0.6.0", "pyunity*")):
+    for file in glob.glob(os.path.join("0.6.0", "pyunity*.whl")):
         os.remove(file)
 else:
     os.mkdir("0.6.0")
