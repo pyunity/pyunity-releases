@@ -1,8 +1,11 @@
 import urllib
 import wget, os, glob, shutil
 
-if os.path.exists("0.6.0"): shutil.rmtree("0.6.0")
-os.mkdir("0.6.0")
+if os.path.exists("0.6.0"):
+    for file in glob.glob(os.path.join("0.6.0", "pyunity*")):
+        os.remove(file)
+else:
+    os.mkdir("0.6.0")
 
 for platform, plat_name in zip(
         ["Visual%20Studio%202019", "Visual%20Studio%202017", "Ubuntu", "macos"],
