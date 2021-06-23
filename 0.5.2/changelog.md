@@ -1,0 +1,1 @@
+Small minor fix of shader inclusion in binary distributions.
