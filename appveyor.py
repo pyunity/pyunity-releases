@@ -8,7 +8,7 @@ else:
     os.mkdir("0.6.0")
 
 for platform, plat_name in zip(
-        ["Visual%20Studio%202019", "Visual%20Studio%202017", "Ubuntu", "macos"],
+        ["Visual%20Studio%202019", "Visual%20Studio%202019", "Ubuntu", "macos"],
         ["win_amd64", "win32", "linux_x86_64", "macosx_10_15_x86_64"]):
     for version, name in zip(
             ["3.6", "3.7", "3.8", "3.9"],
