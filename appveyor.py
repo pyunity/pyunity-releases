@@ -10,14 +10,15 @@ else:
 apiUrl = "https://ci.appveyor.com/api"
 
 project = requests.get(f"{apiUrl}/projects/rayzchen/pyunity")
-jobId = project.json()["build"]["jobs"][0]["jobId"]
-artifacts = requests.get(f"{apiUrl}/buildjobs/{jobId}/artifacts")
+for job in project.json()["build"]["jobs"]:
+    jobId = job["jobId"]
+    artifacts = requests.get(f"{apiUrl}/buildjobs/{jobId}/artifacts")
 
-for artifact in artifacts.json():
-    file = artifact["fileName"]
-    try:
-        wget.download(f"{apiUrl}/buildjobs/{jobId}/artifacts/{file}",
-            "0.7.0/" + os.path.basename(file))
-    except urllib.error.HTTPError:
-        print(f"Couldnt download {os.path.basename(file)}", end="")
-    print()
+    for artifact in artifacts.json():
+        file = artifact["fileName"]
+        try:
+            wget.download(f"{apiUrl}/buildjobs/{jobId}/artifacts/{file}",
+                "0.7.0/" + os.path.basename(file))
+        except urllib.error.HTTPError:
+            print(f"Couldnt download {os.path.basename(file)}", end="")
+        print()
