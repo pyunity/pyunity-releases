@@ -17,9 +17,9 @@ for platform, plat_name in zip(
         windows_location = "C:\\Python" + version[::2] + "-x64\\python"
         windows_location2 = "C:\\Python" + version[::2] + "\\python"
         job_name = "Image:%20" + platform + ";%20Environment:%20version=" + version + ",%20venv=" + venv + ",%20windows_location=" + windows_location + ",%20windows_location2=" + windows_location2
-        #print("https://ci.appveyor.com/api/projects/rayzchen/pyunity/artifacts/dist/pyunity-0.7.0-" + name + plat_name + ".whl?job=" + job_name)
+        #print("https://ci.appveyor.com/api/projects/pyunity/pyunity/artifacts/dist/pyunity-0.7.0-" + name + plat_name + ".whl?job=" + job_name)
         try:
-            wget.download("https://ci.appveyor.com/api/projects/rayzchen/pyunity/artifacts/dist/pyunity-0.7.0-" + name + plat_name + ".whl?job=" + job_name, "0.7.0/pyunity-0.7.0-" + name + plat_name + ".whl")
+            wget.download("https://ci.appveyor.com/api/projects/pyunity/pyunity/artifacts/dist/pyunity-0.7.0-" + name + plat_name + ".whl?job=" + job_name, "0.7.0/pyunity-0.7.0-" + name + plat_name + ".whl")
         except urllib.error.HTTPError:
             print("Couldnt download pyunity-0.7.0-" + name + plat_name + ".whl", end="")
         print()

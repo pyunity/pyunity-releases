@@ -9,7 +9,7 @@ else:
 
 apiUrl = "https://ci.appveyor.com/api"
 
-project = requests.get(f"{apiUrl}/projects/rayzchen/pyunity")
+project = requests.get(f"{apiUrl}/projects/pyunity/pyunity")
 for job in project.json()["build"]["jobs"]:
     jobId = job["jobId"]
     artifacts = requests.get(f"{apiUrl}/buildjobs/{jobId}/artifacts")
