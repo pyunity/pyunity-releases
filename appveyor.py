@@ -24,4 +24,4 @@ for job in project.json()["build"]["jobs"]:
         print()
 
 for file in glob.glob("0.7.0/*linux*"):
-    os.rename(file, file.replace("linux", "manylinux"))
+    os.rename(file, file.replace("linux", "manylinux1"))
