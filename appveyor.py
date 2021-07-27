@@ -22,3 +22,6 @@ for job in project.json()["build"]["jobs"]:
         except urllib.error.HTTPError:
             print(f"Couldnt download {os.path.basename(file)}", end="")
         print()
+
+for file in glob.glob("0.7.0/*linux*"):
+    os.rename(file, file.replace("linux", "manylinux"))
