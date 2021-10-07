@@ -1,3 +1,6 @@
 python appveyor.py
-twine upload --repository testpypi 0.8.0/pyunity*
-twine upload 0.8.0/pyunity*
+cd ../stubs
+py ../stubs/setup.py bdist_wheel -d ../dist/stubs sdist -d ../dist/stubs
+cd ../dist
+twine upload --repository testpypi 0.8.0/pyunity* stubs/pyunity_stubs-0.8.0*
+twine upload 0.8.0/pyunity* stubs/pyunity_stubs-0.8.0*
