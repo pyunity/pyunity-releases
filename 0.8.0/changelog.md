@@ -19,3 +19,5 @@ New features:
   - Platform-specific font loading
 - Stub package
   - This will work with editors such as VSCode and PyCharm, just install `pyunity-stubs` from pip
+
+Stub package: https://pypi.org/project/pyunity-stubs
