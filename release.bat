@@ -1,8 +1,10 @@
 python appveyor.py
 cd ..
-py setup.py sdist -d dist/0.8.4/
+py setup.py sdist -d dist/post-0.4/0.8.4/
 cd stubs
 py setup.py bdist_wheel -d ../dist/stubs sdist -d ../dist/stubs
 cd ../dist
-twine upload --repository testpypi 0.8.4/pyunity* stubs/pyunity?stubs*0.8.4*
-twine upload 0.8.4/pyunity* stubs/pyunity?stubs*0.8.4*
+IF NOT [%1] == [] (
+twine upload --repository testpypi post-0.4/0.8.4/pyunity* stubs/pyunity?stubs*0.8.4*
+twine upload post-0.4/0.8.4/pyunity* stubs/pyunity?stubs*0.8.4*
+)

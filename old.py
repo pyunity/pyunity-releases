@@ -19,11 +19,11 @@ for platform, plat_name in zip(
         job_name = "Image:%20" + platform + ";%20Environment:%20version=" + version + ",%20venv=" + venv + ",%20windows_location=" + windows_location + ",%20windows_location2=" + windows_location2
         #print("https://ci.appveyor.com/api/projects/pyunity/pyunity/artifacts/dist/pyunity-0.8.4-" + name + plat_name + ".whl?job=" + job_name)
         try:
-            wget.download("https://ci.appveyor.com/api/projects/pyunity/pyunity/artifacts/dist/pyunity-0.8.4-" + name + plat_name + ".whl?job=" + job_name, "0.8.4/pyunity-0.8.4-" + name + plat_name + ".whl")
+            wget.download("https://ci.appveyor.com/api/projects/pyunity/pyunity/artifacts/dist/pyunity-0.8.4-" + name + plat_name + ".whl?job=" + job_name, "post-0.4/0.8.4/pyunity-0.8.4-" + name + plat_name + ".whl")
         except urllib.error.HTTPError:
             print("Couldnt download pyunity-0.8.4-" + name + plat_name + ".whl", end="")
         print()
 
-linux_builds = glob.glob("0.8.4/pyunity-0.8.4*linux*.whl")
+linux_builds = glob.glob("post-0.4/0.8.4/pyunity-0.8.4*linux*.whl")
 for file in linux_builds:
     os.rename(file, file.replace("linux", "manylinux1"))

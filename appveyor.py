@@ -1,11 +1,11 @@
 import requests
 import wget, urllib, os, glob
 
-if os.path.exists("0.8.4"):
-    for file in glob.glob(os.path.join("0.8.4", "pyunity*.whl")):
+if os.path.exists("post-0.4/0.8.4"):
+    for file in glob.glob(os.path.join("post-0.4/0.8.4", "pyunity*.whl")):
         os.remove(file)
 else:
-    os.mkdir("0.8.4")
+    os.mkdir("post-0.4/0.8.4")
 
 apiUrl = "https://ci.appveyor.com/api"
 
@@ -18,10 +18,10 @@ for job in project.json()["build"]["jobs"]:
         file = artifact["fileName"]
         try:
             wget.download(f"{apiUrl}/buildjobs/{jobId}/artifacts/{file}",
-                "0.8.4/" + os.path.basename(file))
+                "post-0.4/0.8.4/" + os.path.basename(file))
         except urllib.error.HTTPError:
-            print(f"Couldnt download {os.path.basename(file)}", end="")
+            print(f"Couldn't download {os.path.basename(file)}", end="")
         print()
 
-for file in glob.glob("0.8.4/*linux*"):
+for file in glob.glob("post-0.4/0.8.4/*linux*"):
     os.rename(file, file.replace("linux", "manylinux1"))
