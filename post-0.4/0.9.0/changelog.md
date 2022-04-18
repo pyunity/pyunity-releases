@@ -6,6 +6,7 @@ New features:
 
 - `RenderTarget` component which renders a Camera output to a texture
 - 2D tutorial (tutorial 4)
+- Github Actions integration
 - Environment variable documentation
 - Import reorganization
 - `pathlib.Path` usage
