@@ -17,3 +17,6 @@ New features:
 - Better logging output
 - Splash screen
 - Automatic running of `prepare.py` when installing if needed
+- GitHub issue forms
+- Version info when running `python -m pyunity -v`
+- Migration from unittest to PyTest
