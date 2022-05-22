@@ -6,6 +6,7 @@ New features:
 
 - `RenderTarget` component which renders a Camera output to a texture
 - `Mathf` module
+- Rotation bugs fixed
 - 2D tutorial (tutorial 4)
 - GitHub Actions integration
 - Migration from unittest to PyTest
