@@ -24,6 +24,7 @@ New features:
 
   - New window providers can be added with
     a respective Python package
+  - Current window providers: GLFW, SDL2, GLUT (not fully supported), GLContext
 
 - Rotation bugs fixed
 - Separate EventLoops for rendering, physics and update
@@ -43,3 +44,4 @@ New features:
 - Migration to a `pyproject.toml`-based project
 - Automatic running of `prepare.py` when installing if needed
 - GitHub issue forms
+- New badges displayed on README
