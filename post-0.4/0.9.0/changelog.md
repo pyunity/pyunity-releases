@@ -12,7 +12,7 @@ New features:
 - Customizable scene runner
 - Shadow mapping
 - Revamped project format
-- Version info when running `python -m pyunity -v`
+- Version and dependency info when running `python -m pyunity -v`
 - Linux wheels audited with `auditwheel` on three different archs
 - Environment variable documentation
 
